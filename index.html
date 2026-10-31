@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Der Ausbruch – für Papa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Stardos+Stencil:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Akzentfarbe: hier zentral änderbar */
+  :root { --accent: #e0671f; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0d0f10; }
+  body.locked { overflow: hidden; }
+  a { color: #a9d3dc; } a:hover { color: #ffffff; }
+
+  @keyframes flicker { 0%,7%,9%,52%,54%,100% { opacity: 1 } 8%,53% { opacity: .25 } }
+  @keyframes sweep { from { transform: translateX(-100%) } to { transform: translateX(100%) } }
+  .lamp-glow { animation: flicker 7s infinite; }
+  .redact { position: relative; overflow: hidden; }
+  .redact::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.07) 50%, transparent 70%); animation: sweep 3.5s ease-in-out infinite; }
+
+  /* Intro-Bildschirm */
+  .intro { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 40px 16px; overflow-y: auto;
+    background-color: #0d0f10;
+    background-image: radial-gradient(ellipse at 50% 40%, rgba(13,15,16,0.2), rgba(13,15,16,0.85) 70%), repeating-linear-gradient(90deg, transparent 0 34px, #2f3539 34px 46px, #4d565a 46px 48px, #22272a 48px 52px);
+    transition: opacity .7s ease, visibility 0s linear .7s; }
+  .intro.open { opacity: 0; visibility: hidden; }
+  .intro-btn:hover { filter: brightness(1.1); }
+  .intro-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lamp-glow, .redact::after { animation: none; }
+    .intro { transition: none; }
+  }
+</style>
+</head>
+<body class="locked">
+
+<div style="position: relative; min-height: 100vh; background-color: #0d0f10; background-image: radial-gradient(ellipse at 50% -10%, rgba(169,211,220,0.13), transparent 60%), repeating-linear-gradient(90deg, transparent 0 120px, rgba(255,255,255,0.015) 120px 122px); color: #d9dcdc; font-family: Inter, system-ui, sans-serif; line-height: 1.6; overflow-x: hidden">
+
+  <!-- ===== Intro-Bildschirm ===== -->
+  <div class="intro" id="intro">
+    <div style="width: 100%; max-width: 400px; text-align: center; background: rgba(13,15,16,0.94); border: 1px solid #5d666b; padding: 32px 26px 28px">
+      <p style="margin: 0 0 20px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: clamp(30px, 9vw, 38px); letter-spacing: .04em; line-height: 1.1; color: #ffffff">ALLES GUTE ZUM GEBURTSTAG, <span style="color: var(--accent)">PAPA!</span></p>
+      <p style="margin: 0 auto; max-width: 337px; font-size: 17px; line-height: 1.5; color: #d9dcdc">Dein Geschenk ist ein <strong style="color: #ffffff">Spieleabend</strong> mit uns: Wir spielen das Exit-Spiel und dazu gibt es ein <strong style="color: #ffffff">Drei-Gänge-Menü</strong>.</p>
+      <p style="display: inline-block; margin: 20px 0 0; padding: 7px 14px; border: 2px solid var(--accent); font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .16em; color: #ffffff">EXIT · DER GEFÄNGNISAUSBRUCH</p>
+      <p style="margin: 18px 0 0; font-family: 'Special Elite', monospace; font-size: 15px; color: #9aa4a8">Der Plan für den Abend liegt in deiner Akte.</p>
+      <button type="button" id="openBtn" class="intro-btn" style="margin-top: 22px; min-height: 48px; width: 100%; border: 0; cursor: pointer; background: var(--accent); color: #0d0f10; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .2em; padding: 12px 18px">AKTE ÖFFNEN ▸</button>
+      <p style="margin: 10px 0 0; font-size: 13px; color: #8b9396">Ablauf und das geheime Menü</p>
+    </div>
+  </div>
+  <noscript><style>.intro{display:none}body.locked{overflow:auto}</style></noscript>
+
+  <main style="max-width: 680px; margin: 0 auto; padding: 0 16px 80px">
+
+    <!-- ===== Kopfbereich ===== -->
+    <header style="text-align: center">
+      <div style="width: 2px; height: 60px; margin: 0 auto; background: #5d666b"></div>
+      <div class="lamp-glow" style="width: 34px; height: 12px; margin: 0 auto; background: #9aa4a8; border-radius: 0 0 18px 18px; box-shadow: 0 14px 70px 30px rgba(169,211,220,0.2)"></div>
+      <p style="margin: 52px 0 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .35em; color: var(--accent)">AKTE NR. 3-1-1-0 · INSASSE: PAPA</p>
+      <h1 style="margin: 14px 0 6px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: clamp(54px, 16vw, 104px); line-height: .95; letter-spacing: .03em; color: #ffffff; text-shadow: 0 0 40px rgba(169,211,220,0.25)">DER<br>AUSBRUCH</h1>
+      <p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 20px; color: #9aa4a8">Ein Abend. Ein Plan. Keine Fluchtwege. Und gutes Essen.</p>
+      <p style="display: inline-block; margin: 22px 0 0; padding: 8px 16px; border: 2px solid var(--accent); font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .18em; color: #ffffff">EXIT · DER GEFÄNGNISAUSBRUCH</p>
+      <p style="margin: 34px auto 0; max-width: 520px; font-size: 17px; color: #d9dcdc">Das Urteil ist gefallen: Du wirst für einen ganzen Abend in Gewahrsam genommen. Einziger Ausweg: <br>Du musst gemeinsam mit uns ausbrechen.</p>
+      <p style="margin: 44px 0 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: #8b9396">WEITERLESEN ↓</p>
+    </header>
+
+    <!-- ===== Auf einen Blick ===== -->
+    <section style="margin-top: 72px">
+      <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .35em; color: var(--accent)">DEIN GESCHENK</p>
+      <h2 style="margin: 8px 0 20px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: clamp(28px, 7vw, 40px); letter-spacing: .04em; line-height: 1.1; color: #ffffff">EIN SPIELEABEND</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="background: #1a1d1f; border: 1px solid #2c3134; border-top: 3px solid var(--accent); padding: 22px 20px">
+          <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: #9aa4a8">DAS SPIEL</p>
+          <p style="margin: 6px 0 4px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: clamp(24px, 6vw, 32px); letter-spacing: .04em; line-height: 1.15; color: #ffffff">EXIT – Der Gefängnisausbruch</p>
+          <p style="margin: 0; font-size: 15px; color: #9aa4a8">Das Exit-Spiel von letztem Weihnachten.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <div style="background: #1a1d1f; border: 1px solid #2c3134; padding: 18px">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: #9aa4a8">DAS ESSEN</p>
+            <p style="margin: 6px 0 0; font-size: 16px; font-weight: 600; color: #ffffff">Drei-Gänge-Menü</p>
+            <p style="margin: 2px 0 0; font-size: 14px; color: #9aa4a8">gekocht von Marianna &amp; Julian</p>
+          </div>
+          <div style="background: #1a1d1f; border: 1px solid #2c3134; padding: 18px">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: #9aa4a8">DIE CREW</p>
+            <p style="margin: 6px 0 0; font-size: 16px; font-weight: 600; color: #ffffff">Zu viert</p>
+            <p style="margin: 2px 0 0; font-size: 14px; color: #9aa4a8">Papa, Mama, Marianna &amp; Julian</p>
+          </div>
+          <div style="background: #1a1d1f; border: 1px solid #2c3134; padding: 18px">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: #9aa4a8">DER ORT</p>
+            <p style="margin: 6px 0 0; font-size: 16px; font-weight: 600; color: #ffffff">Zu Hause</p>
+            <p style="margin: 2px 0 0; font-size: 14px; color: #9aa4a8">Wohnzimmer Esstisch</p>
+          </div>
+          <div style="background: #1a1d1f; border: 1px solid #2c3134; padding: 18px">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: #9aa4a8">DER TERMIN</p>
+            <p style="margin: 6px 0 0; font-size: 16px; font-weight: 600; color: #ffffff">Folgt</p>
+            <p style="margin: 2px 0 0; font-size: 14px; color: #9aa4a8">legen wir gemeinsam fest</p>
+            <!-- KALENDER (später): <a href="termin.ics" style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600">In Kalender eintragen</a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Haftbefehl ===== -->
+    <section style="margin-top: 72px">
+      <div style="position: relative; background-color: #e9e2cf; background-image: radial-gradient(circle at 15% 20%, rgba(120,100,60,0.10), transparent 40%), radial-gradient(circle at 85% 80%, rgba(120,100,60,0.12), transparent 45%); color: #1c1a16; padding: 36px 28px 30px; font-family: 'Special Elite', monospace; box-shadow: 0 30px 60px rgba(0,0,0,.55); transform: rotate(-0.6deg)">
+        <div aria-hidden="true" style="position: absolute; top: -14px; left: 32px; width: 18px; height: 52px; border: 3px solid #8e979b; border-bottom-color: transparent; border-radius: 10px"></div>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-bottom: 2px solid #1c1a16; padding-bottom: 10px; margin-bottom: 18px; font-size: 13px; letter-spacing: .08em">
+          <span>JUSTIZVOLLZUG · INTERN</span>
+          <span>BLATT 1/1</span>
+        </div>
+        <div style="position: absolute; right: 18px; top: 58px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: .12em; color: #a3221b; border: 3px solid #a3221b; padding: 4px 10px; transform: rotate(9deg); opacity: .85">GEHEIM</div>
+        <h2 style="margin: 0 0 14px; font-family: 'Stardos Stencil', sans-serif; font-size: 24px; letter-spacing: .06em">HAFTBEFEHL</h2>
+        <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.65">Letztes Weihnachten wurde dir ein verdächtiges Paket übergeben: <strong>EXIT – Der Gefängnisausbruch</strong>. Seitdem liegt es unberührt herum. Das bleibt nicht länger ungestraft.</p>
+        <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.65">Zu deinem Geburtstag schenken wir dir einen gemeinsamen Spieleabend: Wir sperren uns zusammen ein, knacken Rätsel, suchen Hinweise und versuchen, rechtzeitig aus dem Gefängnis zu entkommen.</p>
+        <dl style="display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 18px 0 6px; font-size: 15px">
+          <dt style="font-weight: 700; letter-spacing: .06em">INSASSE</dt>
+          <dd style="margin: 0; border-bottom: 1px dashed rgba(28,26,22,.35)">Papa</dd>
+          <dt style="font-weight: 700; letter-spacing: .06em">KOMPLIZEN</dt>
+          <dd style="margin: 0; border-bottom: 1px dashed rgba(28,26,22,.35)">Mama, Marianna &amp; Julian</dd>
+          <dt style="font-weight: 700; letter-spacing: .06em">KÜCHENDIENST</dt>
+          <dd style="margin: 0; border-bottom: 1px dashed rgba(28,26,22,.35)">Marianna &amp; Julian</dd>
+          <dt style="font-weight: 700; letter-spacing: .06em">HAFTANSTALT</dt>
+          <dd style="margin: 0; border-bottom: 1px dashed rgba(28,26,22,.35)">Zu Hause</dd>
+          <dt style="font-weight: 700; letter-spacing: .06em">HAFTANTRITT</dt>
+          <dd style="margin: 0; border-bottom: 1px dashed rgba(28,26,22,.35)">Wird gemeinsam festgelegt</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Ablauf ===== -->
+    <section style="margin-top: 72px">
+      <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .35em; color: var(--accent)">DER PLAN</p>
+      <h2 style="margin: 8px 0 20px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: clamp(28px, 7vw, 40px); letter-spacing: .04em; line-height: 1.1; color: #ffffff">SO LÄUFT DER ABEND</h2>
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 16px; background: #1a1d1f; border: 1px solid #2c3134; padding: 18px">
+          <div style="font-family: 'Stardos Stencil', sans-serif; font-size: 30px; line-height: 1.2; text-align: center; color: var(--accent); border-right: 1px solid #2c3134">01</div>
+          <div>
+            <h3 style="margin: 0 0 4px; font-family: 'Stardos Stencil', sans-serif; font-size: 19px; letter-spacing: .05em; color: #ffffff">DER HAFTANTRITT</h3>
+            <p style="margin: 0; font-size: 15px; color: #9aa4a8">Wir suchen uns zusammen einen Abend aus, an dem alle Zeit haben.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 16px; background: #1a1d1f; border: 1px solid #2c3134; padding: 18px">
+          <div style="font-family: 'Stardos Stencil', sans-serif; font-size: 30px; line-height: 1.2; text-align: center; color: var(--accent); border-right: 1px solid #2c3134">02</div>
+          <div>
+            <h3 style="margin: 0 0 4px; font-family: 'Stardos Stencil', sans-serif; font-size: 19px; letter-spacing: .05em; color: #ffffff">DIE VERPFLEGUNG</h3>
+            <p style="margin: 0; font-size: 15px; color: #9aa4a8">Wir kochen ein Drei-Gänge-Menü. Was auf den Tisch kommt, bleibt vorerst unter Verschluss.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 16px; background: #1a1d1f; border: 1px solid #2c3134; padding: 18px">
+          <div style="font-family: 'Stardos Stencil', sans-serif; font-size: 30px; line-height: 1.2; text-align: center; color: var(--accent); border-right: 1px solid #2c3134">03</div>
+          <div>
+            <h3 style="margin: 0 0 4px; font-family: 'Stardos Stencil', sans-serif; font-size: 19px; letter-spacing: .05em; color: #ffffff">DER AUSBRUCH</h3>
+            <p style="margin: 0; font-size: 15px; color: #9aa4a8">Zwischen den Gängen spielen wir zu viert das Exit-Spiel und versuchen gemeinsam, aus dem Gefängnis zu entkommen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Speiseplan ===== -->
+    <section style="margin-top: 72px">
+      <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .35em; color: var(--accent)">ANSTALTSKÜCHE</p>
+      <h2 style="margin: 8px 0 20px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: clamp(28px, 7vw, 40px); letter-spacing: .04em; line-height: 1.1; color: #ffffff">DER SPEISEPLAN</h2>
+      <div style="background: #23272a; border: 1px solid #343a3e; padding: 34px 24px; text-align: center">
+        <p style="margin: 0 0 26px; font-family: 'Special Elite', monospace; font-size: 15px; color: #9aa4a8">Drei Gänge. Zubereitet von den Komplizen.</p>
+
+        <!-- ===== MENÜ VERDECKT (aktuell sichtbar) ===== -->
+        <div style="display: flex; flex-direction: column">
+          <div style="padding: 18px 0; border-top: 1px dashed #3d4448">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: var(--accent)">VORSPEISE</p>
+            <div class="redact" aria-label="Geschwärzt" style="width: 70%; height: 26px; margin: 8px auto 0; background: #050606"></div>
+          </div>
+          <div style="padding: 18px 0; border-top: 1px dashed #3d4448">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: var(--accent)">HAUPTGANG</p>
+            <div class="redact" aria-label="Geschwärzt" style="width: 70%; height: 26px; margin: 8px auto 0; background: #050606"></div>
+          </div>
+          <div style="padding: 18px 0; border-top: 1px dashed #3d4448; border-bottom: 1px dashed #3d4448">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: var(--accent)">DESSERT</p>
+            <div class="redact" aria-label="Geschwärzt" style="width: 70%; height: 26px; margin: 8px auto 0; background: #050606"></div>
+          </div>
+          <div style="margin-top: 26px; align-self: center; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; letter-spacing: .14em; color: #e04a3f; border: 3px solid #e04a3f; padding: 6px 14px; transform: rotate(-4deg)">GESPERRT</div>
+          <p style="margin: 16px 0 0; font-family: 'Special Elite', monospace; font-size: 14px; color: #8b9396">Was es gibt, wird erst kurz vor dem Termin enthüllt.</p>
+        </div>
+        <!-- ===== ENDE MENÜ VERDECKT ===== -->
+
+        <!-- ===== MENÜ AUFGEDECKT (später: Block oben löschen, hier die Kommentarzeichen entfernen und Gerichte eintragen) =====
+        <div style="display: flex; flex-direction: column">
+          <div style="padding: 18px 0; border-top: 1px dashed #3d4448">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: var(--accent)">VORSPEISE</p>
+            <p style="margin: 6px 0 0; font-family: 'Special Elite', monospace; font-size: 20px; color: #ffffff">[Vorspeise]</p>
+            <p style="margin: 2px 0 0; font-size: 14px; color: #8b9396">[kurze Beschreibung]</p>
+          </div>
+          <div style="padding: 18px 0; border-top: 1px dashed #3d4448">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: var(--accent)">HAUPTGANG</p>
+            <p style="margin: 6px 0 0; font-family: 'Special Elite', monospace; font-size: 20px; color: #ffffff">[Hauptgang]</p>
+            <p style="margin: 2px 0 0; font-size: 14px; color: #8b9396">[kurze Beschreibung]</p>
+          </div>
+          <div style="padding: 18px 0; border-top: 1px dashed #3d4448; border-bottom: 1px dashed #3d4448">
+            <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .3em; color: var(--accent)">DESSERT</p>
+            <p style="margin: 6px 0 0; font-family: 'Special Elite', monospace; font-size: 20px; color: #ffffff">[Dessert]</p>
+            <p style="margin: 2px 0 0; font-size: 14px; color: #8b9396">[kurze Beschreibung]</p>
+          </div>
+          <div style="margin-top: 26px; align-self: center; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; letter-spacing: .14em; color: #7cc49a; border: 3px solid #7cc49a; padding: 6px 14px; transform: rotate(-4deg)">FREIGEGEBEN</div>
+          <p style="margin: 16px 0 0; font-family: 'Special Elite', monospace; font-size: 14px; color: #8b9396">Haftantritt: [Datum, Uhrzeit]</p>
+        </div>
+        ===== ENDE MENÜ AUFGEDECKT ===== -->
+      </div>
+    </section>
+
+    <!-- ===== Abschluss ===== -->
+    <section style="margin-top: 72px; text-align: center">
+      <p style="margin: 0; font-family: 'Stardos Stencil', sans-serif; font-size: 12px; letter-spacing: .35em; color: var(--accent)">LETZTE NACHRICHT</p>
+      <h2 style="margin: 8px 0 20px; font-family: 'Stardos Stencil', sans-serif; font-weight: 700; font-size: clamp(28px, 7vw, 40px); letter-spacing: .04em; line-height: 1.1; color: #ffffff">ALLES GUTE ZUM GEBURTSTAG</h2>
+      <p style="margin: 0 auto; max-width: 480px; font-family: 'Special Elite', monospace; font-size: 18px; color: #9aa4a8">Wir freuen uns auf einen Abend mit dir, gutes Essen und hoffentlich eine erfolgreiche Flucht.</p>
+      <p style="margin: 26px 0 0; font-family: 'Special Elite', monospace; font-size: 20px; color: #ffffff">Deine Komplizen</p>
+      <p style="margin: 4px 0 0; font-family: 'Special Elite', monospace; font-size: 14px; color: #8b9396">Marianna &amp; Julian</p>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  (function () {
+    var intro = document.getElementById('intro');
+    document.getElementById('openBtn').addEventListener('click', function () {
+      intro.classList.add('open');
+      document.body.classList.remove('locked');
+      window.scrollTo(0, 0);
+    });
+  })();
+</script>
+</body>
+</html>
